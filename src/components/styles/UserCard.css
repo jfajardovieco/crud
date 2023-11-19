@@ -1,6 +1,14 @@
 .article__card{
     background-color: rgb(214, 205, 214);
     display: block;
-    max-width: 40%;
+    max-width: 30%;
     border:  1px solid black;
+    text-align: center;
+}
+
+@media screen and (max-width: 450px){
+.article__card{
+    max-width: 80%;
+}
+
 }
