@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 import useFetch from './hooks/useFetch'
-import axios from 'axios'
 import FormUser from './components/FormUser'
 import UserCard from './components/UserCard'
 
@@ -14,17 +13,18 @@ function App() {
   useEffect(() =>{
     getUsers('/users')
   }, [])
-console.log(users)
+
 
 const handleNewUser = () =>{
 setIsDisable(false)
 }
   return (
     
-    <div>
+    <div className='app__container'>
       
       <h1>Users</h1>
       <button className='form__button' onClick={handleNewUser}>create new user</button>
+      <article className='article__user'>
       <FormUser 
       createUser={createUsers}
       infoUpdate={infoUpdate}
@@ -33,6 +33,7 @@ setIsDisable(false)
       isDisable={isDisable}
       setIsDisable={setIsDisable}
       />
+      </article>
       <div>
         {
           users?.map(user =>(
